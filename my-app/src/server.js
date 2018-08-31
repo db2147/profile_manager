@@ -6,8 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
 if (process.env.NODE_ENV) {
   // Serve up static assets
@@ -17,14 +17,14 @@ if (process.env.NODE_ENV) {
 app.use(routes);
 
 // Set up promises with mongoose
-// mongoose.Promise = global.Promise;
-// // Connect to the Mongo DB
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost/reactchorelist",
-//   {
-//     useMongoClient: true
-//   }
-// );
+mongoose.Promise = global.Promise;
+// Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/profilelist",
+  {
+    useMongoClient: true
+  }
+);
 
 // Start the API server
 app.listen(PORT, function() {
