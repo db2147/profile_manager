@@ -4,11 +4,13 @@ import { Form, Text } from 'react-form';
 export default class AddProfile extends React.Component {
     render() {
         const validate = value => ({
-            error: !value || !/Hello World/.test(value) ? "Input must contain 'Hello World'" : null,
-            warning: !value || !/^Hello World$/.test(value) ? "Input should equal just 'Hello World'" : null,
-            success: value && /Hello World/.test(value) ? "Thanks for entering 'Hello World'!" : null
+            error: !value || !/Hello World/.test(value) ? "Input must contain ''" : null,
+            warning: !value || !/^Hello World$/.test(value) ? "Input should equal just ''" : null,
+            success: value && /Hello World/.test(value) ? "Thanks for entering 'your name'!" : null
         })
         return(
+
+            
             <div>
                 
                 <Form>
