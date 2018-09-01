@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Text, TextArea, Radio, RadioGroup, Select, Checkbox } from 'react-form';
+import { Form, Text, TextArea } from 'react-form';
 
 export default class AddProfile extends React.Component {
     render() {
@@ -11,7 +11,9 @@ export default class AddProfile extends React.Component {
                         <label htmlFor="firstName">First name</label>
                         <Text field="firstName" id="firstName" />
                         <label htmlFor="lastName">Last name</label>
-                        <Text field="lastName" id="lastName" />
+                        <Text field="lastName" id="lastName" /><br/>
+                        <label htmlFor="profilePic">Profile Pic</label>
+                        <Text field="profilePic" id="profilePic" /><br/>
                         <label htmlFor="bio">Bio</label>
                         <TextArea field="bio" id="bio" />
                         <button type="submit" className="mb-4 btn btn-primary">
