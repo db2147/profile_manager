@@ -1,51 +1,25 @@
 import React from 'react';
-import { Form, Text } from 'react-form';
+import { Form, Text, TextArea, Radio, RadioGroup, Select, Checkbox } from 'react-form';
 
 export default class AddProfile extends React.Component {
     render() {
-        const validate = value => ({
-            error: !value || !/Hello World/.test(value) ? "Input must contain ''" : null,
-            warning: !value || !/^Hello World$/.test(value) ? "Input should equal just ''" : null,
-            success: value && /Hello World/.test(value) ? "Thanks for entering 'your name'!" : null
-        })
         return(
-
-            
-            <div>
-                
-                <Form>
-                {formApi => (
-                    <form onSubmit={formApi.submitForm} id="form1" className="mb-4">
-                    <label htmlFor="name">Name</label>
-                    <Text field="name" id="name" validate={validate} />
-                    <button type="submit" className="btn btn-primary">
+            <div>   
+                <Form onSubmit={submittedValues => this.setState({ submittedValues })}>
+                    {formApi => (
+                    <form onSubmit={formApi.submitForm} id="form2">
+                        <label htmlFor="firstName">First name</label>
+                        <Text field="firstName" id="firstName" />
+                        <label htmlFor="lastName">Last name</label>
+                        <Text field="lastName" id="lastName" />
+                        <label htmlFor="bio">Bio</label>
+                        <TextArea field="bio" id="bio" />
+                        <button type="submit" className="mb-4 btn btn-primary">
                         Submit
-                    </button>
+                        </button>
                     </form>
-                )}
-                </Form>
-                <Form>
-                {formApi => (
-                    <form onSubmit={formApi.submitForm} id="form2" className="mb-4">
-                    <label htmlFor="description">Description</label>
-                    <Text field="description" id="description" validate={validate} />
-                    <button type="submit" className="btn btn-primary">
-                        Submit
-                    </button>
-                    </form>
-                )}
-                </Form>
-                <Form>
-                {formApi => (
-                    <form onSubmit={formApi.submitForm} id="form3" className="mb-4">
-                    <label htmlFor="picture">Picture</label>
-                    <Text field="picture" id="picture" validate={validate} />
-                    <button type="submit" className="btn btn-primary">
-                        Submit
-                    </button>
-                    </form>
-                )}
-                </Form>
+                    )}
+                </Form> 
                 
             </div>
         );
